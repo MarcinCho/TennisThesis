@@ -1,11 +1,6 @@
 .conda
 .venv
 .vscode
-db
 OLD
 predictingSchool
-master/__pycache__
-master/first_run
-master/my_dir
-master/my_run_logs
-master/trees
+toDo
