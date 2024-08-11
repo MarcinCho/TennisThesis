@@ -1,4 +1,4 @@
-import pandas as pd  # import pandas library
+import pandas as pd
 from data_preparation.utils.feature_engineering import createFeatures, matchInfo
 
 
