@@ -6,9 +6,6 @@ def data_loader(path, normalize_flag=False, std_scaler=False):
 
     df = pd.read_csv(path)
 
-    if normalize_flag:
-        df = normalize(df)
-
     df, x_latest, y_latest = validation_set(df)
 
     non_numeric_columns = df.select_dtypes(["object"]).columns
@@ -18,6 +15,9 @@ def data_loader(path, normalize_flag=False, std_scaler=False):
     df = df_numeric_only
 
     df = df.drop(["match_id"], axis=1)
+
+    if normalize_flag:
+        df = (df - df.min()) / (df.max() - df.min())
 
     df = df.fillna(df.median())
 
